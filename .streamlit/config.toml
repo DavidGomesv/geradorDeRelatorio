@@ -2,17 +2,36 @@
 gatherUsageStats = false
 
 [server]
+# Configurações otimizadas para mobile
 maxUploadSize = 200
 enableCORS = false
 enableXsrfProtection = false
+# Configurações para melhor conexão mobile
+headless = true
+port = 8501
+# Aumenta timeout para conexões instáveis
+maxMessageSize = 200
+enableWebsocketCompression = true
+# Configuração para manter conexão ativa
+runOnSave = true
+allowRunOnSave = true
 
 [client]
 caching = true
 displayEnabled = true
+# Melhor tratamento de erros para mobile
+showErrorDetails = true
+# Configuração para reconexão automática
+toolbarMode = "minimal"
 
 [runner]
 magicEnabled = true
 fastReruns = true
+# Configurações para mobile
+installTracer = false
+fixMatplotlib = true
+# Permite uploads maiores sem timeout
+enforceSerializableSessionState = false
 
 [logger]
 level = "info"
@@ -22,3 +41,9 @@ primaryColor = "#1f77b4"
 backgroundColor = "#ffffff"
 secondaryBackgroundColor = "#f0f2f6"
 textColor = "#262730"
+
+# Configurações globais para melhor performance mobile
+[global]
+dataFrameSerialization = "legacy"
+unitTest = false
+suppressDeprecationWarnings = true
